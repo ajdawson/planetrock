@@ -20,8 +20,12 @@ def main(argv=None):
                 description='List songs played on Planet Rock.')
         ap.add_argument('-n', '--number-tracks', nargs=1, type=int,
                 metavar='N', help='number of tracks to list', default=[1])
+        ap.add_argument('-r', '--reverse', action='store_true',
+                default=False, help='reverse the order of the tracks')
         args = ap.parse_args(argv[1:])
         track_list = recent_tracks(args.number_tracks[0])
+        if args.reverse:
+            track_list = track_list[::-1]
         for track in track_list:
             print "'{0:s}'  by  {1:s}  [ {2:s} ]".format(*track)
         return 0
