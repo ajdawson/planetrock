@@ -11,7 +11,7 @@ from parser import PlanetRockRadioParser
 
 
 # The URL of the played tracks list. This may change in the future.
-PLANETROCK_RADIO_URL = "http://www.planetrock.com/played"
+PLANETROCK_RADIO_URL = "http://www.planetrock.com/music/"
 
 
 def recent_tracks(n=None):
