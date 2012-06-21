@@ -29,7 +29,7 @@ def main(argv=None):
         for track in track_list:
             print "'{0:s}'  by  {1:s}  [ {2:s} ]".format(*track)
         return 0
-    except Exception, err:
+    except HTMLParseError, err:
         print >> sys.stderr, 'error: %s' % err
         return 1
 
